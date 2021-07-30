@@ -13,6 +13,12 @@
 # 3. create constant variable (all caps) set to value of key from api
 # 4. wherever you make the call, can call it as ENV["variable name"] ie ENV["KEY"]
 
-BASE_URL = 'https://api.thecatapi.com/v1'
-byebug
-ENV["KEY"]
+# BASE_URL = 'https://api.thecatapi.com/v1'
+# ENV["KEY"]
+
+# BASE_URL/categories
+
+response = RestClient.get('https://api.thecatapi.com/v1/breeds')
+breeds_array = JSON.parse(response)
+
+binding.pry
